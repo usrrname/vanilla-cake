@@ -54,28 +54,14 @@ section {
   background-color: palegoldenrod;
 }
 
-a {
-  color: lightpink;
-}
-
+a,
 a:active {
+  color: lightpink;
   text-decoration: none;
 }
 
 p {
   margin: 1rem 0 1rem 0;
-}
-
-strong {
-  font-weight: 700;
-}
-
-.right {
-  float: right;
-}
-
-.left {
-  float: left;
 }
 
 blockquote {
@@ -90,6 +76,13 @@ blockquote {
   line-height: 28px;
 }
 
+.svg {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  fill: white
+}
+
 /* Layout */
 #menu {
   width: 100%;
@@ -99,20 +92,33 @@ blockquote {
   position: fixed;
 }
 
-.menu__logo {
+.menu__top {
+  width: 100%;
   display: flex;
+  background: black;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__img__icon {
+  width: 50px;
+  justify-content: flex-end;
+}
+
+.menu__logo {
   font-family: "Average", Georgia, 'Times New Roman', Times, serif;
   font-style: bold;
   margin: 0;
   padding: 0.825rem;
   justify-content: center;
+  text-align: center;
   color: white;
   z-index: 9999;
   background-color: black;
 }
 
 .menu__navbar {
-  display: flex;
+  display: none;
   font-family: 'Source Sans Pro', sans-serif;
   height: 40px;
   padding: 0 1rem 0 1rem;
@@ -147,7 +153,7 @@ a {
 .main__heading {
   position: relative;
   display: block;
-  font-family: "Times";
+  font-family: "Average", sans-serif;
   align-items: center;
   justify-content: center;
   align-content: center;
@@ -190,7 +196,7 @@ article a:hover {
 }
 
 /* Special */
-.sub-title {
+.subtitle {
   margin: 50px auto;
   font-size: 18px;
   line-height: 23px;
@@ -239,7 +245,7 @@ article a:hover {
   .inner .navbar li a {
     color: inherit;
     font-size: medium;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
   }
 }
