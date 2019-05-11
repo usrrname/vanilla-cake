@@ -1,35 +1,34 @@
 $(document).ready(function () {
-        $('.content').fadeIn();
+        $('section').fadeIn();
 });
 
 function toggleNav() {
         const el = document.getElementsByClassName('menu__navbar')[0];
+        const value = el.style.display
+
         this.show = () => {
-                el.style.display = 'block'
+                el.style.display = 'flex';
         }
         this.hide = () => {
-                el.style.display = 'none'
+                el.style.display = 'none';
         }
-        const value = el.style.display;
-        if (value == 'none') {
-                this.show();
+        if (value == 'none' || value == '') {
+                return this.show();
         }
         if (value != 'none') {
-                this.hide();
+                return this.hide();
         }
-        return value;
 }
 
 //toggle between responsive menu in smaller screens
 const noBootstrap = () => {
         const listItems = document.getElementsByTagName('ul').children;
         const nav = listItems;
-        console.log(listItems);
-        for (var i = 0; i < nav.length; i++) {
-                if (nav[i].firstChild.className !== 'responsive') {
-                        nav[i].firstChild.className = "responsive";
-                        nav[i].firstChild.style.display = "inline-block";
-                } else if (nav[i].firstChild.className === 'responsive') {
+        for (let i in nav) {
+                if (nav[i].children.className !== 'responsive') {
+                        nav[i].classList.add = "responsive";
+                        nav[i].style.display = "inline-block";
+                } else if (nav[i].firstChild.className == 'responsive') {
                         nav[i].firstChild.className = "";
                         nav[i].firstChild.style.display = "none";
                 }
